@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WeatherVerse</title>
+    <link rel="icon" href="https://em-content.zobj.net/thumbs/240/twitter/348/sun-behind-cloud_26c5.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+
+<body class="body">
+
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+            <a class="navbar-brand mx-3" href="#"> WeatherVerse</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">B.Sandheep sai</a></li>
+                            <li><a class="dropdown-item" href="#">VIT student</a></li>
+                            <li><a class="dropdown-item" href="#">Btech 3rd year</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">ph.no:8309397984</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <form id="submitform" class="d-flex" role="search">
+                    <input id="city" class="form-control me-2" type="search" placeholder="Search any city"
+                        aria-label="Search">
+                    <button class="btn btn-outline-danger" type="submit" id="submit"
+                        onclick="slideToDiv()">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="div1">
+        <h1>Explore Weather Wonders:
+             Your Guide to Nature's Symphony</h1>
+    </div>
+
+
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                aria-label="Slide 4"></button>
+
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item ">
+                <img src="https://images.pexels.com/photos/258173/pexels-photo-258173.jpeg?auto=compress&cs=tinysrgb&w=600
+            " class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Stormy</h5>
+                    <p>Find solace in the chaos of thunder and lightning.</p>
+                </div>
+            </div>
+            <div class="carousel-item active">
+                <img src="https://images.pexels.com/photos/846980/pexels-photo-846980.jpeg?auto=compress&cs=tinysrgb&w=600
+            " class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Cloudy</h5>
+                    <p>Uncover the mysteries that lie behind the veil of clouds.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.pexels.com/photos/5940151/pexels-photo-5940151.jpeg?auto=compress&cs=tinysrgb&w=600
+            " class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Rainy</h5>
+                    <p>Let the raindrops dance and wash away the worries!</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.pexels.com/photos/210106/pexels-photo-210106.jpeg?auto=compress&cs=tinysrgb&w=600
+            " class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Sunny</h5>
+                    <p>Embrace the sunshine and soak up the rays!</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div id="maincon" class="importantinfo row my-4 mx-4">
+        <h1>Weather forecast for <span id="cityName"></span></h1>
+
+        <div class="card my-4 mx-4" style="width: 20rem; display: flex; list-style: none; align-items: center;">
+            <img src="https://tse3.mm.bing.net/th?id=OIP.BeE8mwXQQFGrOtRcfvGm3QHaEC&pid=Api&P=0&h=180"
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">SUNRISE AND SUNSET</h5>
+                <li>sunrise is <span id="sunrise"></span></li>
+                <li>sunset is <span id="sunset"></span></li>
+                <li>cloud pct is <span id="cloud_pct"></span> oktas</li>
+                <a href="#" class="btn btn-success my-5">search again</a>
+            </div>
+        </div>
+
+        <div class="card my-4 mx-4" style="width: 26rem; display: flex; list-style: none; align-items: center;">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.xNxU1X-nXbaeVJRO2yp42wHaEO&pid=Api&P=0&h=180"
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">TEMPERATURE</h5>
+                <li>Temparature is <span id="temp"></span> ℃</li>
+                <li>humidity is <span id="humidity"></span> %</li>
+                <li>min temp is <span id="min_temp"></span> ℃</li>
+                <li>max temp is <span id="max_temp"></span> ℃</li>
+                <a href="#" class="btn btn-success my-4">search again</a>
+            </div>
+        </div>
+
+        <div class="card my-4 mx-4" style="width: 20rem; display: flex; list-style: none; align-items: center;">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.h6i1rWCayG8mov8Hz29nUAHaEo&pid=Api&P=0&h=180"
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">WIND SPEED</h5>
+                <li>wind degrees is <span id="wind_degrees"></span> °</li>
+                <li>wind speed is <span id="wind_speed"></span> mph</li>
+                <li>feels like is <span id="feels_like"></span></li>
+                <a href="#" class="btn btn-success m-4">search again</a>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        function slideToDiv() {
+            const div = document.getElementById('maincon');
+            div.scrollIntoView({ behavior: 'smooth' });
+        }
+
+       
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <Script src="script.js"></Script>
+</body>
+
+</html>
